@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Tập Tương Tác Tiếng Anh 9 - Global Success</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8854C0;
+            --secondary: #FDCB6E;
+            --accent: #00C9A7;
+            --correct: #00D26A;
+            --wrong: #FF4757;
+            --text-color: #2D3436;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Quicksand', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(-45deg, #8854C0, #FDCB6E, #00C9A7, #FF7675);
+            background-size: 400% 400%;
+            animation: gradientMove 15s ease infinite;
+            position: relative;
+            padding: 20px;
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='%23ffffff' fill-opacity='0.15'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43 7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm55-56c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM10 82c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm75 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM47 80c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm21-48c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-3-17c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-32 3c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm-9 23c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z'/%3E%3C/g%3E%3C/svg%3E");
+            mix-blend-mode: overlay;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .teacher-title {
+            font-size: 1.1rem;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 6px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            color: var(--primary);
+            font-weight: 700;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: 2px solid var(--primary);
+        }
+
+        .alert-box {
+            background: #FFF3CD;
+            border-left: 6px solid #FFC107;
+            padding: 15px;
+            margin: 15px auto;
+            border-radius: 12px;
+            max-width: 800px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: left;
+            position: relative;
+            z-index: 1;
+        }
+
+        .alert-box h4 {
+            color: #856404;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            padding-bottom: 100px;
+        }
+
+        .section-title {
+            color: #FFF;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            margin: 30px 0 15px 0;
+            font-size: 1.5rem;
+            border-left: 6px solid var(--secondary);
+            padding-left: 10px;
+        }
+
+        .word-box {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            border: 2px dashed var(--primary);
+        }
+
+        .word-badge {
+            background: var(--primary);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.96);
+            border-radius: 24px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border: 4px solid #FFF;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover { transform: translateY(-2px); }
+
+        .question-header {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #2D3436;
+            line-height: 1.6;
+        }
+
+        .dialogue-text {
+            background: #F1F2F6;
+            padding: 12px 18px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary);
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        .option-btn {
+            background: #FFFFFF;
+            border: 2px solid #E0E0E0;
+            border-bottom: 5px solid #E0E0E0;
+            border-radius: 16px;
+            padding: 12px 18px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.1s ease;
+            position: relative;
+            outline: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            transform: scale(1.01) translateY(-2px);
+            border-color: var(--primary);
+            border-bottom-width: 5px;
+        }
+
+        .option-btn:active:not(:disabled) {
+            transform: translateY(3px);
+            border-bottom-width: 2px;
+        }
+
+        .option-btn:disabled { cursor: not-allowed; }
+
+        .option-btn.correct {
+            background-color: #E6F9F0 !important;
+            border-color: var(--correct) !important;
+            border-bottom-color: #00A854 !important;
+            color: #006633 !important;
+        }
+
+        .option-btn.wrong {
+            background-color: #FFEBEB !important;
+            border-color: var(--wrong) !important;
+            border-bottom-color: #D63031 !important;
+            color: #A30000 !important;
+        }
+
+        .explanation-box {
+            margin-top: 20px;
+            background: #F8F9FA;
+            border-radius: 16px;
+            padding: 20px;
+            border-left: 6px solid var(--accent);
+            display: none;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        .explanation-box h5 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .exp-section {
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .exp-title {
+            font-weight: 700;
+            color: #4b6584;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .shake { animation: shakeAnim 0.4s ease-in-out; }
+
+        @keyframes shakeAnim {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-10px); }
+            40%, 80% { transform: translateX(10px); }
+        }
+
+        .submit-area { text-align: center; margin-top: 40px; }
+
+        .btn-submit-all {
+            background: #FF7675;
+            color: white;
+            border: none;
+            border-bottom: 6px solid #D63031;
+            padding: 16px 45px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            transition: all 0.1s ease;
+        }
+
+        .popup-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0; pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .popup-overlay.active { opacity: 1; pointer-events: auto; }
+
+        .popup-content {
+            background: white;
+            border-radius: 30px;
+            padding: 35px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            transform: scale(0.8);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 6px solid var(--primary);
+        }
+
+        .popup-overlay.active .popup-content { transform: scale(1); }
+
+        .popup-score {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin: 15px 0;
+        }
+
+        .popup-comment {
+            font-size: 1.15rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            color: #4b6584;
+        }
+
+        .popup-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-bottom: 5px solid #00A854;
+            padding: 12px 35px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="teacher-title">Giáo viên tạo: Ms Lê Hằng English</div>
+    </header>
+
+    <div class="alert-box">
+        <h4>⚠️ HƯỚNG DẪN LÀM BÀI ĐẠT ĐIỂM CAO ⚠️</h4>
+        <p>Hệ thống bao gồm từ vựng đoạn hội thoại, câu giao tiếp và sắp xếp trật tự phản xạ logic. Các con hãy phân tích kỹ đại từ, từ nối liên kết ngữ cảnh để giải chính xác nhé!</p>
+    </div>
+
+    <div class="container" id="quiz-container"></div>
+
+    <div class="submit-area">
+        <button class="btn-submit-all" onclick="submitTotalExam()">NỘP BÀI TỔNG KẾT</button>
+    </div>
+
+    <div class="popup-overlay" id="result-popup">
+        <div class="popup-content">
+            <h2>🎉 KẾT QUẢ BÀI LÀM 🎉</h2>
+            <div class="popup-score" id="score-display">0/0</div>
+            <div class="popup-comment" id="comment-display">Đang tính điểm...</div>
+            <button class="popup-btn" onclick="closePopup()">Làm lại bài thi</button>
+        </div>
+    </div>
+
+    <script>
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+        function playSound(type) {
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain); gain.connect(audioCtx.destination);
+            if (type === 'correct') {
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(523.25, audioCtx.currentTime);
+                osc.frequency.setValueAtTime(659.25, audioCtx.currentTime + 0.1);
+                gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+                osc.start(); osc.stop(audioCtx.currentTime + 0.3);
+            } else {
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(180.00, audioCtx.currentTime);
+                gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+                osc.start(); osc.stop(audioCtx.currentTime + 0.3);
+            }
+        }
+
+        const questionsData = [
+            // ================= EXERCISE 15 =================
+            {
+                id: 1501, heading: "Exercise 15 - Điền từ vào chỗ trống (Vị trí số 1)",
+                section: "Exercise 15: Complete the conversation",
+                showWordBox: true,
+                isDialogue: true,
+                dialogue: `Emily: "I can’t stand this city, Alex."<br>Alex: "Why not?"<br>Emily: "It’s just a big (1) _______ jungle. There are too many people and it’s always so crowded."`,
+                options: [
+                    {key:"A", text:"packed"}, {key:"B", text:"concrete"},
+                    {key:"C", text:"suburbs"}, {key:"D", text:"entertainment"}
+                ],
+                correct: "B",
+                explanation: {
+                    step1: "Emily: 'Mình không thể chịu nổi thành phố này, Alex.' - Alex: 'Sao lại không chứ?' - Emily: 'Nó chỉ là một khu rừng _______ lớn. Có quá nhiều người và luôn luôn đông đúc.'",
+                    step2: "Cụm danh từ cố định (Collocation): 'concrete jungle' nghĩa là một thành phố lớn dày đặc những tòa nhà bê tông cốt thép, thiếu cây xanh.",
+                    step3: "Từ 'concrete' (bê tông) kết hợp với 'jungle' tạo thành nghĩa bóng hoàn hảo để diễn tả sự ngột ngạt của thành phố theo lời phàn nàn của Emily.",
+                    step4: "Các từ khác như packed (đông nghịt), suburbs (ngoại ô) không tạo thành cụm danh từ có nghĩa tương thích với 'jungle'."
+                }
+            },
+            {
+                id: 1502, heading: "Exercise 15 - Điền từ vào chỗ trống (Vị trí số 2)",
+                isDialogue: true,
+                dialogue: `Alex: "Yeah, but that’s what makes it exciting! There are so many things to do here. You can go to the (2) _______ centre to watch movies, play games, and have fun with friends."`,
+                options: [
+                    {key:"A", text:"congested roads"}, {key:"B", text:"sky train"},
+                    {key:"C", text:"entertainment"}, {key:"D", text:"hang out"}
+                ],
+                correct: "C",
+                explanation: {
+                    step1: "Alex: 'Ừ, nhưng đó mới là điều làm nó thú vị! Có rất nhiều việc để làm ở đây. Bạn có thể đến trung tâm _______ để xem phim, chơi game và vui vẻ với bạn bè.'",
+                    step2: "Cụm danh từ: 'entertainment centre' (trung tâm giải trí). Vế sau có các gợi ý hành động giải trí rõ rệt: 'watch movies, play games'.",
+                    step3: "'entertainment' đi chung với 'centre' tạo thành tổ hợp từ vựng chính xác chỉ nơi chứa các hoạt động rạp phim, khu vui chơi.",
+                    step4: "Các từ còn lại như 'sky train' (tàu điện trên cao) hay 'congested roads' (đường tắc nghẽn) hoàn toàn sai lệch chức năng hành vi."
+                }
+            },
+            {
+                id: 1503, heading: "Exercise 15 - Điền từ vào chỗ trống (Vị trí số 3)",
+                isDialogue: true,
+                dialogue: `Emily: "But the traffic is always terrible. I hate driving on (3) _______."`,
+                options: [
+                    {key:"A", text:"congested roads"}, {key:"B", text:"suburbs"},
+                    {key:"C", text:"more crowded"}, {key:"D", text:"packed"}
+                ],
+                correct: "A",
+                explanation: {
+                    step1: "Emily: 'Nhưng giao thông lúc nào cũng tồi tệ. Mình ghét việc phải lái xe trên _______.'",
+                    step2: "Liên kết logic ngữ cảnh: 'traffic is always terrible' (giao thông tồi tệ) thì hành động 'driving' (lái xe) phải diễn ra trên các con đường bị ùn tắc.",
+                    step3: "Đáp án 'congested roads' (đường bị tắc nghẽn, kẹt cứng) tương thích hoàn hảo với chủ đề giao thông tồi tệ.",
+                    step4: "suburbs (ngoại ô) hay packed (tính từ) không đi với giới từ 'on' để bổ nghĩa phù hợp cho hành động lái xe bị ức chế này."
+                }
+            },
+            {
+                id: 1504, heading: "Exercise 15 - Điền từ vào chỗ trống (Vị trí số 4)",
+                isDialogue: true,
+                dialogue: `Alex: "Well, have you tried taking the (4) _______? It’s much faster."`,
+                options: [
+                    {key:"A", text:"entertainment"}, {key:"B", text:"concrete"},
+                    {key:"C", text:"sky train"}, {key:"D", text:"suburbs"}
+                ],
+                correct: "C",
+                explanation: {
+                    step1: "Alex: 'Chà, bạn đã thử đi _______ chưa? Nó nhanh hơn nhiều đấy.'",
+                    step2: "Từ khóa quyết định là động từ 'taking' (thường dùng cho các phương tiện giao thông công cộng) và đặc tính 'much faster' (nhanh hơn nhiều để tránh tắc đường).",
+                    step3: "'sky train' (tàu điện trên cao) di chuyển trên tuyến đường riêng nên không bị ảnh hưởng bởi kẹt xe đường bộ, giúp đi nhanh hơn.",
+                    step4: "Các danh từ khác không phải phương tiện công cộng nên không thể dùng sau cấu trúc hành vi 'taking the...'"
+                }
+            },
+            {
+                id: 1505, heading: "Exercise 15 - Điền từ vào chỗ trống (Vị trí số 5)",
+                isDialogue: true,
+                dialogue: `Emily: "But then it’s so (5) _______ with people! I prefer walking even if it takes longer."`,
+                options: [
+                    {key:"A", text:"packed"}, {key:"B", text:"more crowded"},
+                    {key:"C", text:"congested roads"}, {key:"D", text:"hang out"}
+                ],
+                correct: "A",
+                explanation: {
+                    step1: "Emily: 'Nhưng lúc đó nó lại quá _______ người! Mình thà đi bộ còn hơn dù tốn nhiều thời gian hơn.'",
+                    step2: "Cấu trúc ngữ pháp đi kèm giới từ: Tính từ 'packed + with + somebody/something' có nghĩa là chật ních, đông nghẹt ai đó.",
+                    step3: "'packed' kết hợp với 'with people' bổ ngữ chuẩn xác cho trạng thái quá đông đúc trên tàu điện cao tốc.",
+                    step4: "'more crowded' cũng mang nghĩa đông đúc nhưng không đi kèm trực tiếp với cấu trúc 'with people' trong ngữ cảnh so sánh này."
+                }
+            },
+            {
+                id: 1506, heading: "Exercise 15 - Điền từ vào chỗ trống (Vị trí số 6)",
+                isDialogue: true,
+                dialogue: `Alex: "You sound like me before I moved here from the (6) _______ . Trust me, you’ll get used to it."`,
+                options: [
+                    {key:"A", text:"concrete"}, {key:"B", text:"suburbs"},
+                    {key:"C", text:"entertainment"}, {key:"D", text:"more crowded"}
+                ],
+                correct: "B",
+                explanation: {
+                    step1: "Alex: 'Bạn nghe giống hệt mình trước khi mình chuyển đến đây từ _______ . Tin mình đi, rồi bạn sẽ quen thôi.'",
+                    step2: "Ngữ cảnh chuyển dịch: Alex nói về quá khứ trước khi sống ở thành phố lớn ('before I moved here'). Nơi đối lập với thành thị náo nhiệt thường là vùng ngoại ô.",
+                    step3: "'suburbs' (vùng ngoại ô) thể hiện rõ nguồn gốc xuất thân của Alex - một nơi yên bình, giải thích lý do tại sao trước đây anh ấy cũng từng sợ thành phố như Emily.",
+                    step4: "Các từ còn lại hoàn toàn không cấu thành một địa danh sinh sống hợp lý."
+                }
+            },
+            {
+                id: 1507, heading: "Exercise 15 - Điền từ vào chỗ trống (Vị trí số 7)",
+                isDialogue: true,
+                dialogue: `Emily: "I guess so, but sometimes it’s just too much. The (7) _______ it gets, the more annoyed I feel."`,
+                options: [
+                    {key:"A", text:"congested roads"}, {key:"B", text:"packed"},
+                    {key:"C", text:"more crowded"}, {key:"D", text:"concrete"}
+                ],
+                correct: "C",
+                explanation: {
+                    step1: "Emily: 'Mình cũng đoán vậy, nhưng đôi khi áp lực quá. Thành phố càng _______ , mình càng cảm thấy bực bội hơn.'",
+                    step2: "Cấu trúc câu so sánh kép (Double Comparative): 'The + comparative + S + V, the + comparative + S + V' (Càng... thì càng...).",
+                    step3: "'more crowded' là dạng so sánh hơn của tính từ, đứng sau 'The' đầu tiên giúp hoàn chỉnh cấu trúc 'The more crowded it gets, the more annoyed I feel'.",
+                    step4: "Các phương án khác không có dạng thức so sánh hơn, vi phạm quy tắc ngữ pháp câu so sánh lũy tiến song hành."
+                }
+            },
+            {
+                id: 1508, heading: "Exercise 15 - Điền từ vào chỗ trống (Vị trí số 8)",
+                isDialogue: true,
+                dialogue: `Alex: "You’re welcome, Emily. Whenever you feel overwhelmed by the city, just remember we can always (8) _______ with our friends and relax."`,
+                options: [
+                    {key:"A", text:"hang out"}, {key:"B", text:"entertainment"},
+                    {key:"C", text:"sky train"}, {key:"D", text:"packed"}
+                ],
+                correct: "A",
+                explanation: {
+                    step1: "Alex: 'Không có chi đâu Emily. Bất cứ khi nào bạn cảm thấy bị ngợp bởi thành phố, hãy nhớ rằng tụi mình luôn có thể _______ với bạn bè và thư giãn.'",
+                    step2: "Cấu trúc động từ nguyên mẫu đứng sau động từ khuyết thiếu 'can always + V-bare'. Cụm từ đi kèm với 'with friends' chỉ hoạt động gặp gỡ vui chơi.",
+                    step3: "Cụm động từ (Phrasal verb) 'hang out with friends' mang nghĩa đi chơi, dành thời gian tụ tập tán gẫu với bạn bè một cách thoải mái.",
+                    step4: "Các phương án còn lại là danh từ hoặc tính từ, không thể đứng sau động từ khuyết thiếu 'can' để thực hiện hành vi."
+                }
+            },
+
+            // ================= EXERCISE 16 =================
+            {
+                id: 1601, heading: "Exercise 16 - Câu 1 (Giao tiếp)",
+                section: "Exercise 16: Multiple Choice Communication Exchanges",
+                isDialogue: true,
+                dialogue: `Ann: "Alex, do you feel safe walking around at night?"<br>Alex: "Generally, yes. ________."`,
+                options: [
+                    {key:"A", text:"I haven’t experienced it much."},
+                    {key:"B", text:"It’s too noisy for me."},
+                    {key:"C", text:"But it's always good to be cautious."},
+                    {key:"D", text:"I prefer staying at home."}
+                ],
+                correct: "C",
+                explanation: {
+                    step1: "Ann: 'Alex, bạn có cảm thấy an toàn khi đi dạo quanh đây vào ban đêm không?' - Alex: 'Nhìn chung là có. ________.'",
+                    step2: "Phản hồi ban đầu là 'Generally, yes' (Nhìn chung là có an toàn), tuy nhiên để hội thoại tự nhiên và mang tính thực tế, người nói thường thêm một lưu ý nhỏ mang tính tương phản.",
+                    step3: "'But it's always good to be cautious' (Nhưng cẩn thận lúc nào cũng tốt) bổ sung một lời khuyên thực tế, liên kết chặt chẽ với trạng thái an toàn ban đêm.",
+                    step4: "Các câu khác không ăn nhập ngữ cảnh: B nói về tiếng ồn, D nói về sở thích ở nhà lệch hướng câu hỏi cảm giác an toàn."
+                }
+            },
+            {
+                id: 1602, heading: "Exercise 16 - Câu 2 (Giao tiếp)",
+                isDialogue: true,
+                dialogue: `Ann: "_______"<br>Alex: "There are plenty of opportunities, but competition is fierce."`,
+                options: [
+                    {key:"A", text:"What do you think about job prospects?"},
+                    {key:"B", text:"Can I pay by credit card?"},
+                    {key:"C", text:"What do you have?"},
+                    {key:"D", text:"You’re welcome."}
+                ],
+                correct: "A",
+                explanation: {
+                    step1: "Ann: '_______' - Alex: 'Có rất nhiều cơ hội, nhưng cạnh tranh cực kỳ khốc liệt.'",
+                    step2: "Từ khóa trong lời phản hồi của Alex là 'opportunities' (cơ hội) và 'competition' (cạnh tranh) -> Các từ ngữ chuyên dụng trong lĩnh vực việc làm, sự nghiệp.",
+                    step3: "'What do you think about job prospects?' (Bạn nghĩ sao về triển vọng việc làm?) hoàn toàn tương thích với câu trả lời đầy tính chuyên môn của Alex.",
+                    step4: "B, C, D là câu mua sắm và câu xã giao thông thường, không chứa từ khóa liên quan."
+                }
+            },
+            {
+                id: 1603, heading: "Exercise 16 - Câu 3 (Giao tiếp)",
+                isDialogue: true,
+                dialogue: `Ann: "Would you ever move to the countryside?"<br>Alex: "_______, but for now, I'm a city person."`,
+                options: [
+                    {key:"A", text:"It’s too heavy."},
+                    {key:"B", text:"Maybe someday."},
+                    {key:"C", text:"Thanks a lot, indeed."},
+                    {key:"D", text:"Welcome back."}
+                ],
+                correct: "B",
+                explanation: {
+                    step1: "Ann: 'Liệu có bao giờ bạn chuyển về vùng quê sống không?' - Alex: '_______, nhưng hiện tại, mình là người của thành phố rồi.'",
+                    step2: "Vế sau có từ nối 'but for now' (nhưng ở hiện tại) thể hiện sự đối lập về mặt thời gian tương lai.",
+                    step3: "'Maybe someday' (Có lẽ một ngày nào đó trong tương lai) là câu trả lời nước đôi mở, rất phù hợp khi đặt trước liên từ phản nghịch 'but'.",
+                    step4: "A (nó quá nặng), C (cảm ơn nhiều), D (chào mừng trở lại) sai hoàn toàn về ngữ nghĩa phản xạ."
+                }
+            },
+            {
+                id: 1604, heading: "Exercise 16 - Câu 4 (Giao tiếp)",
+                isDialogue: true,
+                dialogue: `Ann: "Alex, the traffic in this city is unbearable!"<br>Alex: "I know, Ann. _______."`,
+                options: [
+                    {key:"A", text:"You are Welcome."},
+                    {key:"B", text:"I think it's quite hard to do that."},
+                    {key:"C", text:"You are excellent."},
+                    {key:"D", text:"It takes forever to get anywhere."}
+                ],
+                correct: "D",
+                explanation: {
+                    step1: "Ann: 'Alex, giao thông ở thành phố này thật không thể chịu đựng nổi!' - Alex: 'Mình biết mà Ann. _______.'",
+                    step2: "Alex dùng từ 'I know' thể hiện sự đồng tình cao độ với lời phàn nàn của Ann. Câu tiếp theo phải là câu bổ trợ lý do tại sao giao thông tồi tệ.",
+                    step3: "'It takes forever to get anywhere' (Mất cả thế kỷ mới đi đến được một nơi) là cách nói cường điệu phổ biến mô tả sự chậm trễ kinh hoàng do tắc đường.",
+                    step4: "A, B, C không liên quan gì đến việc bình luận tình trạng giao thông hay kẹt xe."
+                }
+            },
+            {
+                id: 1605, heading: "Exercise 16 - Câu 5 (Giao tiếp)",
+                isDialogue: true,
+                dialogue: `Ann: "_______?"<br>Alex: "Yes, the subway is convenient, but it gets crowded."`,
+                options: [
+                    {key:"A", text:"Do you mind if I sit here?"},
+                    {key:"B", text:"Do you use public transport?"},
+                    {key:"C", text:"It’s a bit hot in here, isn’t it?"},
+                    {key:"D", text:"Would you like a cup of coffee?"}
+                ],
+                correct: "B",
+                explanation: {
+                    step1: "Ann: '_______?' - Alex: 'Có, tàu điện ngầm rất tiện lợi, nhưng nó hay bị đông đúc.'",
+                    step2: "Từ khóa 'subway' (tàu điện ngầm) là một loại hình đại diện cốt lõi thuộc phạm trù 'public transport' (phương tiện giao thông công cộng).",
+                    step3: "Câu hỏi 'Do you use public transport?' (Bạn có dùng phương tiện công cộng không?) nhận được câu trả lời Yes và dẫn chứng tàu điện ngầm là vô cùng logic.",
+                    step4: "Các đáp án A, C, D hỏi về việc xin ngồi nhờ, nhiệt độ phòng hoặc mời uống cà phê, lạc đề hoàn toàn."
+                }
+            },
+            {
+                id: 1606, heading: "Exercise 16 - Câu 6 (Giao tiếp)",
+                isDialogue: true,
+                dialogue: `Ann: "I enjoy spending time in the city parks."<br>Alex: "_______ They're a nice escape from the hustle and bustle."`,
+                options: [
+                    {key:"A", text:"No problem."},
+                    {key:"B", text:"It’s on the wall."},
+                    {key:"C", text:"I’m glad you like it."},
+                    {key:"D", text:"Me too!"}
+                ],
+                correct: "D",
+                explanation: {
+                    step1: "Ann: 'Mình rất thích dành thời gian ở các công viên thành phố.' - Alex: '_______ Chúng là nơi trốn tuyệt vời khỏi sự hối hả và nhộn nhịp.'",
+                    step2: "Vế sau của Alex khen ngợi công viên ('a nice escape...'), chứng tỏ anh ấy có cùng sở thích tích cực giống Ann.",
+                    step3: "Cụm từ ngắn 'Me too!' (Mình cũng vậy!) dùng để đồng tình với câu khẳng định sở thích của người đối diện nhanh chóng và chính xác.",
+                    step4: "C (Mình vui vì bạn thích nó) thường dùng khi mình là chủ nhân hoặc người tạo ra địa điểm/món quà đó, không phù hợp cho công viên công cộng."
+                }
+            },
+            {
+                id: 1607, heading: "Exercise 16 - Câu 7 (Giao tiếp)",
+                isDialogue: true,
+                dialogue: `Ann: "Any good restaurant suggestions?"<br>Alex: "Definitely! ________."`,
+                options: [
+                    {key:"A", text:"Let's try that new sushi place."},
+                    {key:"B", text:"Just round the corner over there."},
+                    {key:"C", text:"Look it up in a dictionary!"},
+                    {key:"D", text:"There’s no traffic near here."}
+                ],
+                correct: "A",
+                explanation: {
+                    step1: "Ann: 'Có gợi ý nhà hàng nào ngon không?' - Alex: 'Chắc chắn rồi! ________.'",
+                    step2: "Ann đang hỏi xin 'suggestions' (lời gợi ý, đề xuất địa điểm cụ thể). Do đó Alex phải đưa ra một cái tên hoặc loại hình nhà hàng cụ thể.",
+                    step3: "'Let's try that new sushi place' (Hãy thử quán sushi mới mở kia đi) là cấu trúc đề xuất 'Let's + V' đưa ra giải pháp ăn uống đúng yêu cầu.",
+                    step4: "B chỉ phương hướng thuần túy khi đã biết địa điểm, C bảo tra từ điển (vô lý), D nói về tình trạng giao thông."
+                }
+            },
+            {
+                id: 1608, heading: "Exercise 16 - Câu 8 (Giao tiếp)",
+                isDialogue: true,
+                dialogue: `Ann: "_______"<br>Alex: "I love it! There are so many clubs and bars."`,
+                options: [
+                    {key:"A", text:"Would you like to have dinner with me?"},
+                    {key:"B", text:"Do you feel like going to the cinema this afternoon?"},
+                    {key:"C", text:"What do you think of the nightlife here?"},
+                    {key:"D", text:"What can I do for you?"}
+                ],
+                correct: "C",
+                explanation: {
+                    step1: "Ann: '_______' - Alex: 'Mình cực kỳ thích nó! Có rất nhiều câu lạc bộ và quán bar.'",
+                    step2: "Từ khóa cốt lõi trong câu trả lời của Alex: 'clubs and bars' (quán bar và câu lạc bộ giải trí đêm) -> Tạo thành định nghĩa của cụm danh từ 'nightlife' (đời sống về đêm).",
+                    step3: "Câu hỏi 'What do you think of the nightlife here?' (Bạn nghĩ gì về cuộc sống về đêm ở đây?) đòi hỏi một câu nhận xét cảm xúc, khớp hoàn toàn với phản xạ của Alex.",
+                    step4: "Các phương án mời ăn tối (A), đi xem phim chiều (B) hay hỏi cần giúp gì không (D) không tương xứng thông tin phản hồi."
+                }
+            },
+            {
+                id: 1609, heading: "Exercise 16 - Câu 9 (Giao tiếp)",
+                isDialogue: true,
+                dialogue: `Ann: "The air quality here isn't great, is it?"<br>Alex: "_______. We need more green spaces."`,
+                options: [
+                    {key:"A", text:"Not really."},
+                    {key:"B", text:"No way! It’s useful."},
+                    {key:"C", text:"I’m of the opposite opinion."},
+                    {key:"D", text:"No, it's not."}
+                ],
+                correct: "D",
+                explanation: {
+                    step1: "Ann: 'Chất lượng không khí ở đây không tốt lắm, phải không?' - Alex: '_______. Chúng ta cần nhiều không gian xanh hơn.'",
+                    step2: "Câu hỏi đuôi dạng phủ định ('isn't great, is it?'). Để đồng ý với một nhận định phủ định (Không khí không tốt = Tồi tệ), tiếng Anh sử dụng 'No, it's not' (Đúng vậy, nó không hề tốt).",
+                    step3: "'No, it's not' xác nhận sự đồng thuận rằng chất lượng không khí tệ, tạo bước đệm hoàn hảo cho giải pháp 'We need more green spaces'.",
+                    step4: "Các phương án phản bác hoặc mơ hồ khác không phù hợp với xu hướng muốn tăng không gian xanh ở câu kế tiếp."
+                }
+            },
+            {
+                id: 1610, heading: "Exercise 16 - Câu 10 (Giao tiếp)",
+                isDialogue: true,
+                dialogue: `Ann: "The noise level drives me crazy sometimes."<br>Alex: "______. Earplugs are my best friends."`,
+                options: [
+                    {key:"A", text:"I don’t agree."},
+                    {key:"B", text:"Absolutely."},
+                    {key:"C", text:"I doubt it."},
+                    {key:"D", text:"Not at all."}
+                ],
+                correct: "B",
+                explanation: {
+                    step1: "Ann: 'Mức độ tiếng ồn đôi khi làm mình phát điên lên được.' - Alex: '______. Nút bịt tai là người bạn thân nhất của mình đấy.'",
+                    step2: "Hành động sử dụng 'Earplugs' (nút bịt lỗ tai chống ồn) chứng tỏ Alex hoàn toàn chịu chung nỗi khổ và thấu hiểu cảm giác phát điên của Ann.",
+                    step3: "'Absolutely' (Chắc chắn rồi / Hoàn toàn đồng ý) thể hiện sự đồng tình tuyệt đối với lời nhận xét của người đối thoại.",
+                    step4: "Các phương án A, C, D mang nghĩa bác bỏ hoặc nghi ngờ, mâu thuẫn hoàn toàn với việc dùng nút bịt tai chống ồn của anh ấy."
+                }
+            },
+
+            // ================= EXERCISE 17 =================
+            {
+                id: 1701, heading: "Exercise 17 - Câu 1 (Sắp xếp đoạn hội thoại)",
+                section: "Exercise 17: Arrange sentences into a meaningful conversation",
+                isDialogue: false,
+                question: `Sắp xếp các câu sau thành một đoạn hội thoại hợp lý:<br>
+                <strong>a.</strong> Ally: Me too! Though sometimes I wish it was a bit quieter.<br>
+                <strong>b.</strong> Brian: Absolutely! I love how everything is so convenient, and there are so many cultural events.<br>
+                <strong>c.</strong> Ally: City life can be really exciting, can't it? There's always something new to do.`,
+                options: [
+                    {key:"A", text:"a - b - c"},
+                    {key:"B", text:"c - a - b"},
+                    {key:"C", text:"b - c - a"},
+                    {key:"D", text:"c - b - a"}
+                ],
+                correct: "D",
+                explanation: {
+                    step1: "Dịch nghĩa: (a) Mình cũng vậy! Dù đôi khi mình ước nó yên tĩnh hơn một chút; (b) Hoàn toàn đồng ý! Mình thích mọi thứ tiện lợi và nhiều sự kiện văn hóa; (c) Cuộc sống thành thị rất thú vị phải không? Luôn có điều mới để làm.",
+                    step2: "Câu (c) đưa ra nhận định tổng quát khơi mào chủ đề (City life). Câu (b) dùng trạng từ 'Absolutely!' để phản hồi trực tiếp cho câu hỏi đuôi 'can't it?' của câu (c). Câu (a) bắt đầu bằng 'Me too!' để phản hồi đồng ý ngược lại với Brian.",
+                    step3: "Mạch logic chuẩn xác phải là: c (mở đầu) -> b (Brian đồng ý và mở rộng) -> a (Ally chốt ý và nêu một nhược điểm nhỏ). Thứ tự đúng là c - b - a.",
+                    step4: "Các phương án khác đảo lộn từ nối khiến 'Absolutely!' hoặc 'Me too!' xuất hiện trước khi ý kiến gốc được phát biểu."
+                }
+            },
+            {
+                id: 1702, heading: "Exercise 17 - Câu 2 (Sắp xếp đoạn hội thoại)",
+                isDialogue: false,
+                question: `Sắp xếp các câu sau thành một đoạn hội thoại hợp lý:<br>
+                <strong>a.</strong> Brian: I agree! And the public transport system has improved so much, making it easier to get around.<br>
+                <strong>b.</strong> Ally: These new public parks are fantastic, aren't they? It's great to have green spaces downtown.<br>
+                <strong>c.</strong> Ally: Definitely. Good public amenities really make a city more livable.`,
+                options: [
+                    {key:"A", text:"a - b - c"},
+                    {key:"B", text:"b - a - c"},
+                    {key:"C", text:"c - a - b"},
+                    {key:"D", text:"b - c - a"}
+                ],
+                correct: "B",
+                explanation: {
+                    step1: "Dịch nghĩa: (a) Mình đồng ý! Và hệ thống giao thông công cộng đã cải thiện rất nhiều...; (b) Những công viên công cộng mới này thật tuyệt vời phải không?...; (c) Chắc chắn rồi. Tiện ích công cộng tốt làm thành phố đáng sống hơn.",
+                    step2: "Câu (b) chứa danh từ cụ thể 'These new public parks' đóng vai trò mở bài giới thiệu địa điểm trực quan. Câu (a) Brian đồng ý ('I agree!') và bổ sung thêm một yếu tố công cộng khác (public transport). Câu (c) Ally đúc kết cả hai yếu tố (parks + transport) thành một thuật ngữ chung là 'public amenities'.",
+                    step3: "Trình tự phát triển tư duy từ cụ thể đến khái quát hóa: b -> a -> c. Đáp án chính xác là B.",
+                    step4: "Nếu chọn các thứ tự khác, câu tổng kết tổng quát (c) sẽ đứng trước câu ví dụ, hoặc từ thay thế không tìm được danh từ gốc đứng trước."
+                }
+            },
+            {
+                id: 1703, heading: "Exercise 17 - Câu 3 (Sắp xếp đoạn hội thoại)",
+                isDialogue: false,
+                question: `Sắp xếp các câu sau thành một đoạn hội thoại hợp lý:<br>
+                <strong>a.</strong> Brian: Not yet, but I've heard great things about it! People say it's really fast.<br>
+                <strong>b.</strong> Ally: You definitely should. It's a game-changer for getting around the city.<br>
+                <strong>c.</strong> Ally: Have you had a chance to try the new sky train yet?<br>
+                <strong>d.</strong> Ally: It is! I used it yesterday, and it cut my commute time in half.<br>
+                <strong>e.</strong> Brian: That's amazing. I'm looking forward to giving it a try soon.`,
+                options: [
+                    {key:"A", text:"c - a - d - e - b"},
+                    {key:"B", text:"a - c - d - e - b"},
+                    {key:"C", text:"c - d - a - e - b"},
+                    {key:"D", text:"c - a - e - d - b"}
+                ],
+                correct: "A",
+                explanation: {
+                    step1: "Phân tích các câu: (c) Hỏi đã thử đi tàu điện trên cao chưa. (a) Trả lời chưa nhưng nghe nói rất nhanh. (d) Xác nhận đúng vậy ('It is!') và kể trải nghiệm bản thân giảm nửa thời gian đi lại. (e) Khen ngợi 'That's amazing' và hứa sẽ thử sớm. (b) Khuyên bạn 'You definitely should' (Bạn chắc chắn nên thử).",
+                    step2: "Mắt xích liên kết: Hỏi (c) -> Trả lời phủ định (a). Xác nhận tính từ 'fast' bằng cụm 'It is!' (d) -> Tương tác cảm xúc phản hồi (e) -> Lời khuyên chốt hội thoại (b).",
+                    step3: "Chuỗi liên kết hội thoại logic không thể phá vỡ là c - a - d - e - b. Khớp hoàn toàn với đáp án A.",
+                    step4: "Các phương án nhiễu khác đặt câu xác nhận 'It is!' ngay sau câu hỏi khi chưa có câu trả lời của Brian, làm hỏng hoàn toàn nguyên tắc hội thoại tương tác."
+                }
+            }
+        ];
+
+        const container = document.getElementById('quiz-container');
+        let userAnswers = {};
+
+        function renderQuiz() {
+            container.innerHTML = "";
+            let currentSection = "";
+
+            questionsData.forEach((q, index) => {
+                if (q.section && q.section !== currentSection) {
+                    currentSection = q.section;
+                    const sectionHeader = document.createElement('h2');
+                    sectionHeader.className = 'section-title';
+                    sectionHeader.innerText = currentSection;
+                    container.appendChild(sectionHeader);
+
+                    if (q.showWordBox) {
+                        const wordBox = document.createElement('div');
+                        wordBox.className = 'word-box';
+                        const words = ["congested roads", "more crowded", "suburbs", "entertainment", "packed", "concrete", "hang out", "sky train"];
+                        words.forEach(w => {
+                            const badge = document.createElement('span');
+                            badge.className = 'word-badge';
+                            badge.innerText = w;
+                            wordBox.appendChild(badge);
+                        });
+                        container.appendChild(wordBox);
+                    }
+                }
+
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.id = `card-${q.id}`;
+
+                let headerHtml = `<div class="question-header"><strong>Câu ${index + 1}:</strong> [${q.heading}]</div>`;
+                if (q.isDialogue) {
+                    headerHtml += `<div class="dialogue-text">${q.dialogue}</div>`;
+                } else {
+                    headerHtml += `<div style="margin-bottom:15px; line-height:1.6; background:#F8F9FA; padding:15px; border-radius:12px;">${q.question}</div>`;
+                }
+                card.innerHTML = headerHtml;
+
+                const optionsGrid = document.createElement('div');
+                optionsGrid.className = 'options-grid';
+                
+                q.options.forEach(opt => {
+                    const btn = document.createElement('button');
+                    btn.className = 'option-btn';
+                    btn.innerHTML = `<strong>${opt.key}.</strong> &nbsp;${opt.text}`;
+                    btn.onclick = () => checkAnswer(btn, q.id, opt.key, q.correct);
+                    optionsGrid.appendChild(btn);
+                });
+                
+                card.appendChild(optionsGrid);
+
+                const expBox = document.createElement('div');
+                expBox.className = 'explanation-box';
+                expBox.id = `exp-${q.id}`;
+                expBox.innerHTML = `
+                    <h5>💡 Giải Thích Sư Phạm Chi Tiết:</h5>
+                    <div class="exp-section"><span class="exp-title">1. Ngữ cảnh & Dịch nghĩa câu:</span><br>${q.explanation.step1}</div>
+                    <div class="exp-section"><span class="exp-title">2. Phân tích ngữ liệu liên kết:</span><br>${q.explanation.step2}</div>
+                    <div class="exp-section"><span class="exp-title">3. Vì sao đáp án này đúng?</span><br>${q.explanation.step3}</div>
+                    <div class="exp-section"><span class="exp-title">4. Vì sao các phương án khác sai?</span><br>${q.explanation.step4}</div>
+                `;
+                card.appendChild(expBox);
+                container.appendChild(card);
+            });
+        }
+
+        function checkAnswer(clickedBtn, qId, selectedKey, correctKey) {
+            const card = document.getElementById(`card-${qId}`);
+            const buttons = card.querySelectorAll('.option-btn');
+            buttons.forEach(btn => btn.disabled = true);
+
+            if (selectedKey === correctKey) {
+                clickedBtn.classList.add('correct');
+                playSound('correct');
+                userAnswers[qId] = true;
+            } else {
+                clickedBtn.classList.add('wrong');
+                buttons.forEach(btn => {
+                    if (btn.innerHTML.includes(`<strong>${correctKey}.</strong>`)) {
+                        btn.classList.add('correct');
+                    }
+                });
+                card.classList.add('shake');
+                playSound('wrong');
+                userAnswers[qId] = false;
+            }
+            document.getElementById(`exp-${qId}`).style.display = 'block';
+        }
+
+        function submitTotalExam() {
+            let correctCount = 0;
+            const totalQuestions = questionsData.length;
+            
+            questionsData.forEach(q => {
+                if (userAnswers[q.id] === true) correctCount++;
+            });
+            
+            const percentage = (correctCount / totalQuestions) * 100;
+            document.getElementById('score-display').innerText = `${correctCount}/${totalQuestions}`;
+
+            let comment = "";
+            if (percentage < 50) {
+                comment = "Con cần đọc kỹ phần dịch nghĩa và ngữ cảnh kết nối từ vựng của cô để cải thiện phản xạ nhé!";
+            } else if (percentage >= 50 && percentage < 85) {
+                comment = "Kết quả rất tốt! Con đã nắm chắc phần lớn các liên kết hội thoại, xem kỹ câu sai để đạt điểm tuyệt đối nha.";
+            } else {
+                comment = "Xuất sắc! Con có tư duy logic ngôn ngữ vô cùng nhạy bén và hiểu sâu cấu trúc xã giao bản xứ.";
+            }
+
+            document.getElementById('comment-display').innerText = `Lời khuyên từ cô Hằng: "${comment}"`;
+            document.getElementById('result-popup').classList.add('active');
+        }
+
+        function closePopup() {
+            document.getElementById('result-popup').classList.remove('active');
+            userAnswers = {};
+            renderQuiz();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        renderQuiz();
+    </script>
+</body>
+</html>
